@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Overview</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleFavorite()">
+        <ion-icon color="warning" [name]="isFavorite ? 'star' : 'star-outline'"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="movie-backdrop" [style.background-image]="'https://image.tmdb.org/t/p/w780/' + movie?.backdrop_path">
+    <ion-card>
+      <img [src]="'https://image.tmdb.org/t/p/w500/' + movie?.poster_path" alt="Movie Poster">
+      <ion-card-header>
+        <ion-card-title>{{ movie?.title }} ({{ movie?.release_date | date: 'yyyy' }})</ion-card-title>
+        <ion-card-subtitle>
+          <ion-chip *ngFor="let genre of movie?.genres">
+            {{ genre.name }}
+          </ion-chip>
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-label>
+            <ion-icon color="warning" name="star" slot="start"></ion-icon>
+            {{ movie?.vote_average }} / 10
+          </ion-label>
+        </ion-item>
+        <p><strong>Sinopsis</strong></p>
+        <p>{{ movie?.overview }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-list style="margin-left: 10px;">
+    <ion-label style="margin-left: 10px;">Cast</ion-label>
+    <ion-item *ngFor="let member of cast | slice:0:5">
+      <ion-thumbnail slot="start">
+        <img style="border-radius: 50%;" [src]="'https://image.tmdb.org/t/p/w200/' + member.profile_path" alt="{{ member.name }}">
+      </ion-thumbnail>
+      {{ member.name }} as {{ member.character }}
+    </ion-item>
+  </ion-list>
+</ion-content>

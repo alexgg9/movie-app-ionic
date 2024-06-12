@@ -1,0 +1,20 @@
+<div class="movie-container">
+  @for(movie of movies; track movie.id){
+  <ion-list>
+    <ion-item [routerLink]="['/movie-profile', movie?.id]">
+      <ion-thumbnail slot="start" class="movie-poster" >
+        <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="{{ movie.title }}">
+      </ion-thumbnail>  
+      <ion-label class="movie-info">
+        <h2 style="font-size: 20px;">{{movie.title}}</h2>
+        <p style="font-size: 16px;">{{movie.release_date | date: 'yyyy'}} </p>
+        <div style="display: flex; align-items: center;">
+          <ion-icon name="star" slot="end" style="margin-bottom: 5px;" color="warning"></ion-icon><p style="margin-left: 5px;">{{movie.vote_average}}</p>
+        </div>
+        <p class="movie-synopsis">{{movie.overview}}</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+  }
+</div>

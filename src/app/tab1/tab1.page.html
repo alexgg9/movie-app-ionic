@@ -1,17 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content>
+  <ion-toolbar no-border-top>
+    <ion-segment color="warning" [(ngModel)]="movieSelection" (ionChange)="getSelection(movieSelection)">
+      <ion-segment-button value="popular" class="options_button">
+        Popular
+      </ion-segment-button>
+      <ion-segment-button value="upcoming" class="options_button">
+        Upcoming
+      </ion-segment-button>
+      <ion-segment-button value="top_rated" class="options_button">
+        Top Rated
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <app-movie-list *ngIf="movieSelection == 'popular'" [movies]="popularMovies"></app-movie-list>
+  <app-movie-list *ngIf="movieSelection == 'upcoming'" [movies]="upcomingMovies"></app-movie-list>
+  <app-movie-list *ngIf="movieSelection == 'top_rated'" [movies]="topRatedMovies"></app-movie-list>
 </ion-content>
+

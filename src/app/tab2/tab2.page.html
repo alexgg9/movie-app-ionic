@@ -1,17 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Search Movies
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar no-border-top>
+    <ion-searchbar placeholder= "Search Movies" [(ngModel)]="searchTerm" debounce="500" (ionInput)="onSearchInput($event)"></ion-searchbar>
+  </ion-toolbar>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-spinner *ngIf="statusSearch" name="dots" color="warning" style="display: block; margin: auto;"></ion-spinner>
+
+
+  <ion-list *ngIf="searchResults.length > 0">
+    @for(movie of searchResults; track movie.id){
+    <ion-item *ngIf="movie.poster_path">
+      <ion-thumbnail slot="start" class="movie-thumbnail" [routerLink]="['/movie-profile', movie.id]">
+        <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="{{ movie.title }}">
+      </ion-thumbnail>
+      <ion-label class="movie-details">
+        <h2>{{ movie.title }}</h2>
+        <p>{{ movie.release_date | date: 'yyyy' }}</p>
+      </ion-label>
+    </ion-item>
+  }
+  </ion-list>
+
+  <ion-list *ngIf="searchResults.length === 0 && !statusSearch && searchTerm !== ''">
+    <ion-item>
+      <ion-label style="text-align: center;">No results found...</ion-label>
+    </ion-item>
+  </ion-list> 
 </ion-content>

@@ -1,0 +1,30 @@
+.movie-poster{
+    width: 150px;
+    height: 250px;
+    object-fit: cover;
+
+}
+.movie-poster img {
+    border-radius: 10px;
+}
+
+.movie-info {
+    padding: 10px;
+}
+
+.movie-synopsis {
+    font-size: 16px;
+    color: #666;
+    margin-top: 17px;
+    max-height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+  }
+  
+  
+
+
