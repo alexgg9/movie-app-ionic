@@ -55,5 +55,22 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
 
 ```bash
 git clone https://github.com/tu_usuario/movie-app-ionic.git
+```
+2. Instala las dependencias:
 
+```
+cd movie-app-ionic
+npm install
+```
+3. Configura las variables de entorno:
+
+Obtén tu propia API Key de TMDB en [TMDB Api](https://developer.themoviedb.org/reference/intro/getting-started).
+
+4. Inicia la aplicación:
+
+Asegurate de tener instalado Node.js, Ionic y Angular para ejecutar la app.
+
+```
+ionic serve -o
+```
 
