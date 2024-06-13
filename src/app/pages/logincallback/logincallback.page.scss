@@ -1,0 +1,23 @@
+/* Asegurar que el cuerpo y el html ocupen toda la pantalla */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  ion-app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  ion-content {
+    background-color: transparent;
+  }
+  
+  .spinner-container {
+    text-align: center;
+    margin-top: calc(50vh - 20px); 
+  }
+  

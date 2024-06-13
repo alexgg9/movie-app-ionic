@@ -7,12 +7,16 @@
     <ion-buttons slot="end">
       <ion-button (click)="toggleFavorite()">
         <ion-icon color="warning" [name]="isFavorite ? 'star' : 'star-outline'"></ion-icon>
+        <ion-alert></ion-alert>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div *ngIf="isLoading" class="spinner-container">
+    <ion-spinner color="warning" name="crescent"></ion-spinner>
+  </div>
   <div class="movie-backdrop" [style.background-image]="'https://image.tmdb.org/t/p/w780/' + movie?.backdrop_path">
     <ion-card>
       <img [src]="'https://image.tmdb.org/t/p/w500/' + movie?.poster_path" alt="Movie Poster">
