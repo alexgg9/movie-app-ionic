@@ -4,10 +4,10 @@ Movie-app es una aplicación web que utiliza la API de The Movie Database (TMDB)
 
 ## Capturas de Pantalla
 
-![Inicio](screenshots/inicio.png)
+![Inicio](screenshots/home.png)
 *Página de inicio - Muestra películas populares.*
 
-![Detalles de Película](screenshots/detalle_pelicula.png)
+![Detalles de Película](screenshots/movie.png)
 *Detalles de película - Información detallada de una película.*
 
 ## Instalación
