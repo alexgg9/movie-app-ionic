@@ -9,6 +9,15 @@ Movie-app es una aplicación web desarrollada con Ionic que utiliza la API de Th
 Movie-app es una aplicación web desarrollada con Ionic que utiliza la API de The Movie Database (TMDB) para mostrar información sobre películas. Además, permite a los usuarios autenticarse con sus cuentas de TMDB y añadir películas a su lista de favoritos, que se sincroniza con su cuenta en TMDB.
 
 ## Capturas de Pantalla
+<div align="center">
+  <img src="screenshots/login.png" alt="Inicio" width="300"/>
+  <p><em>Página de Login - Login con la cuenta de TMDB.</em></p>
+</div>
+
+<div align="center">
+  <img src="screenshots/tmdb.png" alt="Inicio" width="300"/>
+  <p><em>Redicrección a TMDB - Confirmación con TMDB para el acceso y solicitud del token.</em></p>
+</div>
 
 <div align="center">
   <img src="screenshots/home.png" alt="Inicio" width="300"/>
@@ -18,6 +27,16 @@ Movie-app es una aplicación web desarrollada con Ionic que utiliza la API de Th
 <div align="center">
   <img src="screenshots/movie.png" alt="Detalles de Película" width="300"/>
   <p><em>Detalles de película - Información detallada de una película.</em></p>
+</div>
+
+<div align="center">
+  <img src="screenshots/search.png" alt="Inicio" width="300"/>
+  <p><em>Busqueda - Busqueda de películas.</em></p>
+</div>
+
+<div align="center">
+  <img src="screenshots/fav.png" alt="Inicio" width="300"/>
+  <p><em>Películas favoritas - Películas favoritas que se añadiran a nuestra cuenta de TMDB.</em></p>
 </div>
 
 ## Características
