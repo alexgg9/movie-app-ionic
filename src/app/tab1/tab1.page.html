@@ -5,7 +5,7 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content [fullscreen]="true">
   <ion-toolbar no-border-top>
     <ion-segment color="warning" [(ngModel)]="movieSelection" (ionChange)="getSelection(movieSelection)">
       <ion-segment-button value="popular" class="options_button">
